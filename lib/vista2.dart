@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'barra.dart';
 
 class vista2 extends StatefulWidget {
   const vista2({super.key});
@@ -52,23 +53,29 @@ class vista extends StatelessWidget {
 
                   
                 ),
+              
                
-               
-               
-               
-                
-    
               ],
               
               
             
             ),
-            
+          
             
             
           ),
-          
-          
+          datos(),
+          Divider(height: 15.0,),
+          publi(),
+          Divider(height: 10.0,),
+          perfile1(),
+          perfile2(),
+          perfile3(),
+          publi2(),
+          Divider(height: 10.0,),
+          imagenes()
+        
+         
               
          
     ],
@@ -85,52 +92,12 @@ class vista extends StatelessWidget {
                     enableIMEPersonalizedLearning: false,
                     
                     decoration: InputDecoration(
-                      hintText: 'Nombre de Usuario',
-                      labelText: 'Nombre de Usuario',
-                      suffixIcon: Icon(Icons.person, color: Colors.red,),
+                      hintText: 'buscar',
+                      labelText: 'buscar',
+                      suffixIcon: Icon(Icons.search, color: Colors.black,),
                       
-                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0)) 
-                    ),
-                
-                  ),
-                  
-                ),
-    );
-             
-  }
-  Widget datos1(){
-    return SingleChildScrollView(
-      child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 25, vertical: 1),
-        child: TextField(
-                  enableInteractiveSelection: false,
-                  obscureText: true,
-                  enableIMEPersonalizedLearning: false,
-                  decoration: InputDecoration(
-                    hintText: 'Contraseña',
-                    labelText: ' Contraseña',
-                    suffixIcon: Icon(Icons.key,color: Colors.red,),
-                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0)) 
-                  ),
-                ),
-    
-                ),
-    );
-  }
-  Widget datos3(){
-    return SingleChildScrollView(
-      child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 25, vertical: 1),
-                  child: TextField(
-                    
-                    enableIMEPersonalizedLearning: false,
-                    
-                    decoration: InputDecoration(
-                      hintText: 'Correo',
-                      labelText: 'Correo',
-                      suffixIcon: Icon(Icons.email, color: Colors.red,),
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(0.0)) 
                       
-                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0)) 
                     ),
                 
                   ),
@@ -140,185 +107,251 @@ class vista extends StatelessWidget {
              
   }
   
-  Widget botones(){
-    return  Container(
-                
-                
-                 child: MaterialButton(onPressed:(){},
-                  hoverColor: Color.fromARGB(255, 26, 48, 9),
-                 
-                 padding: EdgeInsets.symmetric(horizontal: 30,vertical: 10,),
-                 shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15.0)
-                        ),
-                        color: Colors.white,
-                 
-                 
-                  child: Container(
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      
-                      
-                      children: <Widget> [
-                                ClipRRect(
-              
-                          child: Container(
-                            
-                            height: 30.0,
-                            width: 45.0,
-                        
-                            child: Image.asset('assets/google.png'),
-
-
-                          
-          ),
-              ),
-              SizedBox(
-                    width: 80.0,
-              ),
-              Align(
-                    alignment: Alignment.center,
-                    child:  Text("Registro con Google",
-                    style: TextStyle(fontSize: 15.0),
-                        textAlign: TextAlign.center),
-                        
-              ),
-              SizedBox(
-                    width: 70.0,
-              ),
-              
-             
-
-
-                      ],
-                    ),
-                  ),
-                  ),
-               );
-  }
-  Widget botones2(){
-    return Container(
-                
-                
-                 child: MaterialButton(onPressed:(){},
-                  hoverColor: Color.fromARGB(255, 111, 244, 3),
-                 
-                 padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10,),
-                 shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15.0)
-                        ),
-                        color: Colors.white,
-                 
-                 
-                  child: Container(
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      
-                      
-                      children: <Widget> [
-                                ClipRRect(
-                           borderRadius: BorderRadius.circular(10.0),
-                          child: Container(
-                            
-                            height: 30.0,
-                            width: 45.0,
-                        
-                            child: Image.asset('assets/feis.png'),
-
-
-                          
-          ),
-              ),
-              SizedBox(
-                    width: 80.0,
-              ),
-              Align(
-                    alignment: Alignment.center,
-                    child:  Text("Registro con Facebook",
-                    style: TextStyle(fontSize: 15.0),
-                        textAlign: TextAlign.center),
-                        
-              ),
-              SizedBox(
-                    width: 70.0,
-              ),
-              
-             
-
-
-                      ],
-                    ),
-                  ),
-                  ),
-               );
-  }
-
+ 
+  
+  
+  
 }
-class bottonini extends StatefulWidget {
-  const bottonini({super.key});
-
-  @override
-  State<bottonini> createState() => _bottoniniState();
-}
-
-class _bottoniniState extends State<bottonini> {
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          child: Row(
-            
-            children: [
-              Text("¿Ya  tienes una cuenta?",),
-              Container(
-                child: MaterialButton(onPressed:(){Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context) => vista2()),
-                                );},
-                child: Text("Inicia",style:TextStyle(color: Colors.red),),
-                ),
-              ),
-              Spacer(flex: 10,),
-
-              Container(
-                alignment: Alignment.centerRight,
-                child: MaterialButton(onPressed: (){},
-                child: Text("REGISTRATE",style: TextStyle(color: Colors.black,fontSize: 20.0,),),),
+Widget publi(){
+  return Container(
+    alignment: Alignment.bottomLeft,
+                  child:Text(
+                'Publicaciones',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold),
               )
-              
-            ],
-            
-          ),
-          
-
-        ),
-      ],
-    );
-  }
+  );
 }
-class chekbox extends StatefulWidget {
-  const chekbox({super.key});
-
-  @override
-  State<chekbox> createState() => _chekboxState();
-}
-
-class _chekboxState extends State<chekbox> {
-  @override
-  Widget build(BuildContext context) {
-     return CheckboxListTile(
-    title: Text("Acepto los terminos y condiciones"),
-    value: timeDilation!=1.0,
-    onChanged: (bool? value){
-      setState((){
-        timeDilation=value! ? 5.0:1.0;
-      });
-    },
-    activeColor: Colors.red,
+Widget publi2(){
+  return Row(
+    children: [
+      Container(
+        alignment: Alignment.bottomLeft,
+                      child:Text(
+                    'Herramientas',
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold),
+                  ),
+                  
+      ),
+      Spacer(flex: 10,),
+      Icon(Icons.turn_right_sharp,color: Colors.black,),
+    ],
     
   );
-  }
+  
+}
+Widget perfile1(){
+  return Container(
+    child: Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+                   children: <Widget> [
+                                  ClipRRect(
+                             borderRadius: BorderRadius.circular(10.0),
+                            child: Container(
+                              
+                              height: 80.0,
+                              width: 45.0,
+                          
+                              child: Image.asset('assets/foto1.png'),
+
+
+                            
+            ),
+                ),
+                Spacer(flex: 2,),
+                Text("Problemas de Registro",style: TextStyle(color: Colors.black,fontSize: 20.0),),
+                SizedBox(
+                      width: 80.0,
+                ),
+                  Spacer(flex: 2,),
+                  Icon(Icons.close,color: Colors.black,),
+                  
+                
+                        ],
+                  
+                  
+        ),
+        
+      ],
+      
+    ),
+    
+  );
+  
+  
+}
+Widget perfile2(){
+  return Container(
+    child: Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+                   children: <Widget> [
+                                  ClipRRect(
+                             borderRadius: BorderRadius.circular(10.0),
+                            child: Container(
+                              
+                              height: 80.0,
+                              width: 45.0,
+                          
+                              child: Image.asset('assets/foto1.png'),
+
+
+                            
+            ),
+                ),
+                Spacer(flex: 2,),
+                Text("Se Necesita Veterinario",style: TextStyle(color: Colors.black,fontSize: 20.0),),
+                SizedBox(
+                      width: 80.0,
+                ),
+                  Spacer(flex: 2,),
+                  Icon(Icons.close,color: Colors.black,),
+                  
+                
+                        ],
+                  
+                  
+        ),
+        
+      ],
+      
+    ),
+    
+  );
+  
+  
+}
+Widget perfile3(){
+  return Container(
+    child: Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+                   children: <Widget> [
+                                  ClipRRect(
+                             borderRadius: BorderRadius.circular(10.0),
+                            child: Container(
+                              
+                              height: 80.0,
+                              width: 45.0,
+                          
+                              child: Image.asset('assets/foto1.png'),
+
+
+                            
+            ),
+                ),
+                Spacer(flex: 1,),
+                Text("Clases virtuales",style: TextStyle(color: Colors.black,fontSize: 20.0),),
+                SizedBox(
+                      width: 80.0,
+                ),
+                  Spacer(flex: 2,),
+                  Icon(Icons.close,color: Colors.black,),
+                  
+                
+                        ],
+                  
+                  
+        ),
+        
+      ],
+      
+    ),
+    
+  );
+  
+  
+}
+Widget perfile4(){
+  return Container(
+    child: Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+                   children: <Widget> [
+                                  ClipRRect(
+                             borderRadius: BorderRadius.circular(10.0),
+                            child: Container(
+                              
+                              height: 80.0,
+                              width: 45.0,
+                          
+                              child: Image.asset('assets/foto1.png'),
+
+
+                            
+            ),
+                ),
+                Spacer(flex: 2,),
+                Text("Problemas de Registro",style: TextStyle(color: Colors.black,fontSize: 20.0),),
+                SizedBox(
+                      width: 80.0,
+                ),
+                  Spacer(flex: 2,),
+                  Icon(Icons.close,color: Colors.black,),
+                  
+                
+                        ],
+                  
+                  
+        ),
+        
+      ],
+      
+    ),
+    
+  );
+  
+  
+}
+Widget imagenes(){
+  return Container(
+    child: Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+                   children: <Widget> [
+                                  ClipRRect(
+                             borderRadius: BorderRadius.circular(10.0),
+                            child: Container(
+                              
+                              height: 130.0,
+                              width: 130.0,
+                          
+                              child: Image.asset('assets/Vaca.png'),
+
+
+                            
+            ),
+                ),
+                Container(
+                  height: 130.0,
+                  width: 130.0,
+                  child: Image.asset('assets/registro.png'),
+
+                ),
+                Container(
+                   height: 130.0,
+                  width: 130.0,
+                  child: Image.asset('assets/documento.png'),
+
+                )
+                
+                        ],
+                  
+                  
+        ),
+        
+      ],
+      
+    ),
+    
+  );
 }
