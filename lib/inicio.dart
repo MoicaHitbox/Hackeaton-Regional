@@ -89,7 +89,7 @@ class hola extends StatelessWidget {
       child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 25, vertical: 1),
         child: TextField(
-                  enableInteractiveSelection: false,
+                  enableInteractiveSelection: true,
                   obscureText: true,
                   enableIMEPersonalizedLearning: false,
                   decoration: InputDecoration(
