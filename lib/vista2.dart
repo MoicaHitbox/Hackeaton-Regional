@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_application_1/mensajeria.dart';
+import 'package:flutter_application_1/navegar.dart';
+import 'package:flutter_application_1/perfil.dart';
 import 'barra.dart';
 
 class vista2 extends StatefulWidget {
@@ -10,6 +13,7 @@ class vista2 extends StatefulWidget {
 }
 
 class _vistaState extends State<vista2> {
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,7 +24,8 @@ class _vistaState extends State<vista2> {
       
       home: Scaffold(
         resizeToAvoidBottomInset : false,
-        body:vista()
+        body:navegar(),
+        
             
       ),
     );
@@ -64,6 +69,7 @@ class vista extends StatelessWidget {
             
             
           ),
+          
           datos(),
           Divider(height: 15.0,),
           publi(),
@@ -72,11 +78,10 @@ class vista extends StatelessWidget {
           perfile2(),
           perfile3(),
           publi2(),
-          Divider(height: 10.0,),
           imagenes()
         
-         
-              
+          
+          
          
     ],
     
@@ -325,7 +330,7 @@ Widget imagenes(){
                               height: 130.0,
                               width: 130.0,
                           
-                              child: Image.asset('assets/Vaca.png'),
+                              child: Image.asset('assets/registro.png'),
 
 
                             
@@ -334,13 +339,59 @@ Widget imagenes(){
                 Container(
                   height: 130.0,
                   width: 130.0,
-                  child: Image.asset('assets/registro.png'),
+                  child: Image.asset('assets/Vaca.png'),
+                  
 
                 ),
                 Container(
                    height: 130.0,
                   width: 130.0,
                   child: Image.asset('assets/documento.png'),
+
+                )
+                
+                        ],
+                  
+                  
+        ),
+        
+      ],
+      
+    ),
+    
+  );
+}
+Widget info(){
+  return Container(
+    child: Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+                   children: <Widget> [
+                                  ClipRRect(
+                             borderRadius: BorderRadius.circular(10.0),
+                            child: Container(
+                              
+                              height: 100.0,
+                              width: 100.0,
+                          
+                              child: Text("Registro"),
+
+
+                            
+            ),
+                ),
+                Container(
+                  height: 100.0,
+                  width: 100.0,
+                 child: Text("Ciclo Astral"),
+                  
+
+                ),
+                Container(
+                   height: 100.0,
+                  width: 80.0,
+                  child: Text("Documentos"),
 
                 )
                 
