@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_application_1/herramientas.dart';
 import 'package:flutter_application_1/mensajeria.dart';
 import 'package:flutter_application_1/navegar.dart';
 import 'package:flutter_application_1/perfil.dart';
@@ -19,7 +20,7 @@ class _vistaState extends State<vista2> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: <String,WidgetBuilder>{
-        "/vista2":(BuildContext context)=> vista2(),
+        "/herraientas":(BuildContext context)=> herramientas(),
       },
       
       home: Scaffold(
@@ -70,15 +71,7 @@ class vista extends StatelessWidget {
             
           ),
           
-          datos(),
-          Divider(height: 15.0,),
-          publi(),
-          Divider(height: 10.0,),
-          perfile1(),
-          perfile2(),
-          perfile3(),
-          publi2(),
-          imagenes()
+      
         
           
           
@@ -88,33 +81,6 @@ class vista extends StatelessWidget {
   );
       
   }
-  Widget datos(){
-    return SingleChildScrollView(
-      child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 25, vertical: 1),
-                  child: TextField(
-                    
-                    enableIMEPersonalizedLearning: false,
-                    
-                    decoration: InputDecoration(
-                      hintText: 'buscar',
-                      labelText: 'buscar',
-                      suffixIcon: Icon(Icons.search, color: Colors.black,),
-                      
-                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(0.0)) 
-                      
-                    ),
-                
-                  ),
-                  
-                ),
-    );
-             
-  }
-  
- 
-  
-  
   
 }
 Widget publi(){
@@ -148,174 +114,55 @@ Widget publi2(){
   );
   
 }
-Widget perfile1(){
-  return Container(
-    child: Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-                   children: <Widget> [
-                                  ClipRRect(
-                             borderRadius: BorderRadius.circular(10.0),
-                            child: Container(
-                              
-                              height: 80.0,
-                              width: 45.0,
-                          
-                              child: Image.asset('assets/foto1.png'),
+Widget publicaci(){
+  return ListView(
+      children: <Widget> [
+                  vista(),
+                  Divider(height: 30.0,),
+                  publi(),
+                  Divider(height: 30.0,),
 
+               Card(child: ListTile(
+                enabled: true,
+                subtitle:Text("Ing Slender"),
+                trailing: Icon(Icons.close),
+                leading: Image.asset('assets/foto1.png'),
+                isThreeLine: true,
+                title: Text("Problemas de Registro"),
+              ),),
+              Card( child: ListTile(
+                enabled: true,
+                subtitle: Text("Ing Moica"),
+                trailing: Icon(Icons.close),
+                leading: Image.asset('assets/foto1.png'),
+                isThreeLine: true,
+                title: Text("Se Necesita Veterinario"),
+              ),),
+              Card( child: ListTile(
+                enabled: true,
+                subtitle: Text("Ingeniero Slender"),
+                trailing: Icon(Icons.close),
+                leading: Image.asset('assets/foto1.png'),
+                isThreeLine: true,
+                title: Text("Clases Virtuales"),
+              ),),
+              Card( child: ListTile(
+                enabled: true,
+                subtitle: Text("Ing Slender"),
+                trailing: Icon(Icons.close),
+                leading: Image.asset('assets/foto1.png'),
+                isThreeLine: true,
+                title: Text("Problemas de Registro"),
+              ),),
+              
+              btnherramienta(),
+              imagenes()
+            ],
+          
 
-                            
-            ),
-                ),
-                Spacer(flex: 2,),
-                Text("Problemas de Registro",style: TextStyle(color: Colors.black,fontSize: 20.0),),
-                SizedBox(
-                      width: 80.0,
-                ),
-                  Spacer(flex: 2,),
-                  Icon(Icons.close,color: Colors.black,),
-                  
-                
-                        ],
-                  
-                  
-        ),
-        
-      ],
-      
-    ),
-    
   );
-  
-  
 }
-Widget perfile2(){
-  return Container(
-    child: Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-                   children: <Widget> [
-                                  ClipRRect(
-                             borderRadius: BorderRadius.circular(10.0),
-                            child: Container(
-                              
-                              height: 80.0,
-                              width: 45.0,
-                          
-                              child: Image.asset('assets/foto1.png'),
 
-
-                            
-            ),
-                ),
-                Spacer(flex: 2,),
-                Text("Se Necesita Veterinario",style: TextStyle(color: Colors.black,fontSize: 20.0),),
-                SizedBox(
-                      width: 80.0,
-                ),
-                  Spacer(flex: 2,),
-                  Icon(Icons.close,color: Colors.black,),
-                  
-                
-                        ],
-                  
-                  
-        ),
-        
-      ],
-      
-    ),
-    
-  );
-  
-  
-}
-Widget perfile3(){
-  return Container(
-    child: Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-                   children: <Widget> [
-                                  ClipRRect(
-                             borderRadius: BorderRadius.circular(10.0),
-                            child: Container(
-                              
-                              height: 80.0,
-                              width: 45.0,
-                          
-                              child: Image.asset('assets/foto1.png'),
-
-
-                            
-            ),
-                ),
-                Spacer(flex: 1,),
-                Text("Clases virtuales",style: TextStyle(color: Colors.black,fontSize: 20.0),),
-                SizedBox(
-                      width: 80.0,
-                ),
-                  Spacer(flex: 2,),
-                  Icon(Icons.close,color: Colors.black,),
-                  
-                
-                        ],
-                  
-                  
-        ),
-        
-      ],
-      
-    ),
-    
-  );
-  
-  
-}
-Widget perfile4(){
-  return Container(
-    child: Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-                   children: <Widget> [
-                                  ClipRRect(
-                             borderRadius: BorderRadius.circular(10.0),
-                            child: Container(
-                              
-                              height: 80.0,
-                              width: 45.0,
-                          
-                              child: Image.asset('assets/foto1.png'),
-
-
-                            
-            ),
-                ),
-                Spacer(flex: 2,),
-                Text("Problemas de Registro",style: TextStyle(color: Colors.black,fontSize: 20.0),),
-                SizedBox(
-                      width: 80.0,
-                ),
-                  Spacer(flex: 2,),
-                  Icon(Icons.close,color: Colors.black,),
-                  
-                
-                        ],
-                  
-                  
-        ),
-        
-      ],
-      
-    ),
-    
-  );
-  
-  
-}
 Widget imagenes(){
   return Container(
     child: Column(
@@ -361,48 +208,40 @@ Widget imagenes(){
     
   );
 }
-Widget info(){
-  return Container(
-    child: Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-                   children: <Widget> [
-                                  ClipRRect(
-                             borderRadius: BorderRadius.circular(10.0),
-                            child: Container(
-                              
-                              height: 100.0,
-                              width: 100.0,
-                          
-                              child: Text("Registro"),
+class btnherramienta extends StatefulWidget {
+  const btnherramienta({super.key});
 
+  @override
+  State<btnherramienta> createState() => _btnherramientaState();
+}
 
-                            
-            ),
-                ),
-                Container(
-                  height: 100.0,
-                  width: 100.0,
-                 child: Text("Ciclo Astral"),
-                  
-
-                ),
-                Container(
-                   height: 100.0,
-                  width: 80.0,
-                  child: Text("Documentos"),
-
-                )
-                
-                        ],
-                  
-                  
-        ),
-        
-      ],
-      
-    ),
-    
-  );
+class _btnherramientaState extends State<btnherramienta> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10,),
+      child: Row(
+        children: [
+          Container(
+                    child: MaterialButton(onPressed:(){Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => herramientas()),
+                                    );},
+                    child:Text(
+                        'Herramientas',
+                        style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold),
+                      ),
+                      
+                    ),
+                    
+                  ),
+                  Spacer(flex:10 ,),
+                  Icon(Icons.expand_circle_down_outlined)
+        ],
+      ),
+          
+    );
+  }
 }

@@ -12,7 +12,7 @@ class navegar extends StatefulWidget {
 class _navegarState extends State<navegar> {
   int _paginaactual=0;
   List<Widget>_paginas= [
-    vista(),
+    publicaci(),
     perfile(),
     perfil()
   ];

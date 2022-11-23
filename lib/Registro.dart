@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_application_1/inicio.dart';
 
 class Registro extends StatefulWidget {
   const Registro({super.key});
@@ -14,7 +15,7 @@ class _RegistroState extends State<Registro> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: <String,WidgetBuilder>{
-        "/Registro":(BuildContext context)=> Registro(),
+        "/hola":(BuildContext context)=>hola() ,
       },
       
       home: Scaffold(
@@ -288,7 +289,7 @@ class _bottoniniState extends State<bottonini> {
               Container(
                 child: MaterialButton(onPressed:(){Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (context) => Registro()),
+                                  MaterialPageRoute(builder: (context) => hola()),
                                 );},
                 child: Text("Inicia",style:TextStyle(color: Colors.red),),
                 ),
